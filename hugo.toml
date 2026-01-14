@@ -1,21 +1,89 @@
-baseURL = 'https://example.org/'
-languageCode = 'ja'
-title = 'My New Hugo Site'
-theme = 'hugo-theme-stack'
+baseURL = "https://flourishing-stardust-b38d10.netlify.app/"
+languageCode = "ja"
+title = "my-blog"
+theme = "hugo-theme-stack"
+
+# 日本語記事でも変なURLにならないように
+hasCJKLanguage = true
+
+[pagination]
+pagerSize = 10
+
+# ビルド関連
+enableEmoji = true
+enableGitInfo = true
+
 [params]
-    mainSections = ["posts"]
-    featuredImageField = "image"
-    rssFullContent = true
-    
+  description = "プログラマーの雑記ブログ。技術・ゲーム・日常。"
+  mainSections = ["posts"]
+  featuredImageField = "image"
+  rssFullContent = true
+
+  # サイドバー表示
+  
+    [params.sidebar]
+    enabled = true
+    emoji = "🦙"
+    subtitle = "コードとゲームと日常"
+
+    [params.sidebar.avatar]
+    enabled = true
+    local = true
+    src = "img/avatar.png"
+
+    [params.profile]
+    enabled = true
+    name = "alpaca0601"
+    bio = """
+    都内で働くプログラマー。
+    ゲームとコードと適当な雑記を書いていきます。
+
+    Hugo + Stack + Netlify 構成で試験的にブログ運営中。
+    """
+
+  # フッター
+  [params.footer]
+    since = 2025
+    customText = "Powered by Hugo & Stack"
+
+  # 記事設定
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+
+  # 日付表記
+  [params.dateFormat]
+    published = "2006-01-02"
+    lastUpdated = "2006-01-02 15:04"
+
+  # SNS
+  [[params.social]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/alpaca0601"
+
+  [[params.social]]
+    identifier = "twitter"
+    name = "X（停止中）"
+    url = "https://x.com/alpaca_stream"
+
+# 日本語メニュー
 [menu]
-    [[menu.main]]
-        identifier = "home"
-        name = "Home"
-        url = "/"
-        weight = -100
-        
-    [[menu.main]]
-        identifier = "posts"
-        name = "Posts"
-        url = "/posts/"
-        weight = -90
+  [[menu.main]]
+    identifier = "home"
+    name = "ホーム"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "記事"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "about"
+    name = "プロフィール"
+    url = "/about/"
+    weight = 3
