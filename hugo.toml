@@ -3,6 +3,12 @@ languageCode = "ja"
 title = "my-blog"
 theme = "hugo-theme-stack"
 
+# --- 追加：Googleアナリティクスの設定 ---
+[services]
+  [services.googleAnalytics]
+    id = "G-62PQF0FKR1"
+# --------------------------------------
+
 # 日本語記事でも変なURLにならないように
 hasCJKLanguage = true
 
